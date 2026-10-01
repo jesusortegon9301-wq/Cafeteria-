@@ -1,0 +1,53 @@
+schema: spec-driven
+
+# Contexto que OpenSpec entrega a la IA al crear cualquier artefacto.
+context: |
+  Proyecto: CafeteriaPatterns. Solución académica pequeña en C# (.NET 8, aplicación de consola) que
+  representa el proceso de un pedido de cafetería:
+  Producto -> Complementos -> Precio -> Pago -> Validación -> Confirmación.
+  Debe demostrar 1 patrón creacional (Factory Method) y 3 estructurales (Decorator, Adapter, Facade).
+  Debe ser sencillo, claro y fácil de comprender y defender.
+
+  Tecnología: C# 12, .NET 8, ImplicitUsings y Nullable habilitados, Visual Studio 2022, Git.
+  Pruebas con xUnit en tests/Cafeteria.Tests. Código de la aplicación en src/Cafeteria.
+  Dinero con decimal (COP). Pagos SIMULADOS: sin red ni transacciones reales.
+  Nombres de clases y carpetas en español, salvo IPayment y los sufijos Creator, Decorator y Adapter.
+  Los flujos esperados (producto, complemento o medio de pago inexistente; pago rechazado) se
+  resuelven con el estado RECHAZADO y un mensaje, sin excepciones.
+  Cada prueba se nombra con el criterio de aceptación que demuestra (por ejemplo CA05_...).
+
+  Documentos fuente: docs/01-problema.md y docs/02-especificacion-base.md (requisitos RF-01 a RF-14,
+  criterios CA-01 a CA-10). Trazabilidad en docs/03-trazabilidad.md.
+
+  Fuera de alcance: inventario, base de datos, API REST, Swagger, login, registro de usuarios,
+  roles, permisos, clientes, contabilidad, facturación electrónica, nómina, domicilios, reservas,
+  mesas, proveedores, reportes financieros, aplicación móvil, notificaciones, integraciones
+  bancarias reales, transacciones reales, inteligencia artificial, microservicios, Docker y
+  Kubernetes.
+
+  Reglas del proyecto:
+  1. No implementar antes de completar la propuesta.
+  2. No agregar funcionalidades fuera del alcance.
+  3. No crear una arquitectura innecesariamente compleja.
+  4. Mantener el código pequeño.
+  5. Utilizar exactamente un patrón creacional.
+  6. Utilizar exactamente tres patrones estructurales.
+  7. Los patrones deben ser visibles y demostrables en el código.
+  8. El código debe ser comprensible para un estudiante.
+  9. La implementación debe corresponder con las especificaciones.
+  10. Las pruebas deben demostrar los criterios de aceptación.
+  11. README.md debe documentar la solución.
+  12. Antes de implementar, revisar proposal.md, specs/, design.md y tasks.md.
+  No agregar funcionalidades sin modificar primero la especificación.
+
+rules:
+  proposal:
+    - Incluir Problema, Objetivo, Alcance, Fuera de alcance, Patrones seleccionados, Justificación y Resultado esperado.
+  specs:
+    - Como mínimo las capacidades Productos, Personalización, Pagos y Pedidos.
+    - Cada especificación debe tener requisitos y escenarios verificables.
+  design:
+    - Explicar clases, interfaces, responsabilidades, relaciones, Factory Method, Decorator, Adapter, Facade y el flujo del pedido.
+  tasks:
+    - Dividir la implementación en tareas pequeñas y verificables.
+    - Incluir pruebas, README y verificación final.
